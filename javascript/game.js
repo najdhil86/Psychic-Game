@@ -23,7 +23,13 @@ var cChoice = cOptions[cRandom];
 //Checking random letter
 // console.log(cChoice);
 
+//conditions to see if
 
+if (cChoice.includes(event.key)){
+    console.log(true);
+} else{
+    console.log(false);
+}
 
 
 
