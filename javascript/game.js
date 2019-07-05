@@ -1,12 +1,26 @@
 
 //Total Guesses left
+
 var totalGuess = 9;
+
+
+var grabGuess = document.querySelector(".guesses");
+
+// grabGuess.innerText = totalGuess;
 
 // Wins
 var win = 0;
 
+var grabWin = document.querySelector(".wins");
+
+// grabWin.innerText = win;
+
 //Lose
 var lose = 0;
+
+var grabLosses = document.querySelector(".loses");
+
+// grabLosses.innerText = lose;
 
 
 //Random choice of computer choice
@@ -20,18 +34,6 @@ var cRandom = Math.floor(Math.random()*cOptions.length)
 // Chooses a random letter from cOptions
 var cChoice = cOptions[cRandom];
 
-//Checking random letter
-// console.log(cChoice);
-
-//conditions to see if
-
-if (cChoice.includes(event.key)){
-    console.log(true);
-} else{
-    console.log(false);
-}
-
-
 
 //Your guesses so far. This area of the code will display what letter the user is typing
 
@@ -42,11 +44,25 @@ function userKey(){
     //this event object available to us
     //event.key gives you the key pressed
     var guessKey = document.querySelector(".userInputs");
-    var userLetter = [];
+    
     guessKey.innerText = event.key;
 }
 
+var userLetter = [];
+
 document.onkeyup = userKey;
 
-//empty array
-//
+function gameFunction(event) {
+
+    var user_input = event.key;
+
+    if (user_input == cChoice) {
+
+        win++;
+        totalGuess = 9;
+
+        
+    }
+
+
+}

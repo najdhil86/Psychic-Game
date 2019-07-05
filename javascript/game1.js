@@ -10,7 +10,7 @@ var cRandom = Math.floor(Math.random()*cOptions.length);
 // Chooses a random letter from cOptions
 var cChoice = cOptions[cRandom];
 
-var userChoice = "d";
+var userChoice = event.key;
 
 
 if (userChoice == cChoice){
