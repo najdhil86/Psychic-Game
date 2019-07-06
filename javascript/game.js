@@ -1,68 +1,55 @@
-
-//Total Guesses left
-
-var totalGuess = 9;
-
-
-var grabGuess = document.querySelector(".guesses");
-
-// grabGuess.innerText = totalGuess;
-
-// Wins
-var win = 0;
-
-var grabWin = document.querySelector(".wins");
-
-// grabWin.innerText = win;
-
-//Lose
-var lose = 0;
-
-var grabLosses = document.querySelector(".loses");
-
-// grabLosses.innerText = lose;
-
-
-//Random choice of computer choice
-
 //Computer's Option
-var cOptions = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"];
+var letters = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"];
 
-// Makes a random index
-var cRandom = Math.floor(Math.random()*cOptions.length)
+var wins = 0;
 
-// Chooses a random letter from cOptions
-var cChoice = cOptions[cRandom];
+var losses = 0;
 
+var guesses = 9;
 
-//Your guesses so far. This area of the code will display what letter the user is typing
+var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-// var userLetter = "";
-var guessKey = document.querySelector(".userInputs");
+var userGuessSoFar = [];
 
-function userKey(){
-    //this event object available to us
-    //event.key gives you the key pressed
-    var guessKey = document.querySelector(".userInputs");
-    
-    guessKey.innerText = event.key;
+var winPoints = document.getElementById("wins");
+var guessesLeft = document.getElementById("guessLeft");
+var losePoints = document.getElementById("losses");
+var guessSoFar = document.getElementById("guess-so-far");
+
+function updateDisplays() {
+  winPoints.textContent = wins;
+  guessesLeft.textContent = guesses;
+  losePoints.textContent = losses;
 }
 
-var userLetter = [];
+document.onkeyup = function(event) {
 
-document.onkeyup = userKey;
+  var userGuess = event.key;
+  userGuessSoFar.push(userGuess);
+  guessSoFar.textContent = userGuessSoFar;
 
-function gameFunction(event) {
+  if (userGuess == computerGuess) {
 
-    var user_input = event.key;
+    wins++;
+    guesses = 9
+    userGuessSoFar = [];
+    computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
-    if (user_input == cChoice) {
+  } else {
 
-        win++;
-        totalGuess = 9;
+    guesses--;
 
-        
+    if (guesses == 0) {
+      losses++;
+      userGuessSoFar = [];
+      guesses = 9;
     }
 
+  }
+
+  updateDisplays();
 
 }
+
+
+updateDisplays();
