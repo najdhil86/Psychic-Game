@@ -14,7 +14,7 @@ var userGuessSoFar = [];
 var winPoints = document.getElementById("wins");
 var guessesLeft = document.getElementById("guessLeft");
 var losePoints = document.getElementById("losses");
-var guessSoFar = document.getElementById("guess-so-far");
+var guessSoFar = document.getElementById("user_guesses");
 
 function updateDisplays() {
   winPoints.textContent = wins;
