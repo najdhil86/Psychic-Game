@@ -1,83 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-  <title>The Pyschic Game</title>
-  <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guess that letter!</title>
 </head>
+<body>
 
-<body background = "assets/images/questionmark_blue.png">
-  <div class="header">
-    <div class="row">
-      <h1>Are you a psychic?</h1>
-    </div>
-  </div>
+<h1>Guess the Letter!</h1>
 
-  <div class="container">
-    <div class="row">
-      <h3>Guess what letter I'm thinking of...</h3>
-    </div>
-    <div class="row">
-      <div class="col-md-12, info">
-        Wins:
-      </div>
-    </div>
+<h3>Wins: <span id="wins">0</span></h3>
+<h3>Loses: <span id="loses">0</span></h3>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="populate" id="winCount">
-          0
-        </div>
-      </div>
-    </div>
+<h3>Total Guesses: <span id="guess"></span></h3>
 
-    <div class="row">
-      <div class="col-md-12, info">
-        Losses:
-      </div>
-    </div>
+<h3> Keys pressed: <span id="userChoices"></span></h3>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="populate" id="lossCount">
-          0
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12, info">
-        Guesses Remaining:
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="populate" id="guessesRemaining">
-          10
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12, info">
-        Your Guesses:
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="populate" id="guessedLetters">
-          guesses..
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-<script src="javascript/game1.js"></script>
-
+<script src="javascript/game2.js"></script>
 </body>
-
 </html>
