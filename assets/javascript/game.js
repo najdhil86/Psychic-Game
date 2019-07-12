@@ -33,7 +33,7 @@ function gameplay(){
     userChoices.push(user_input);
     selectHTMLID();
     
-    if (userChoices == randomChoice){
+    if (user_input == randomChoice){
 
         wins++;
         
